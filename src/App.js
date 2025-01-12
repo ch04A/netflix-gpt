@@ -1,10 +1,9 @@
-import Header from "./Components/Header";
+import { Body } from "./Components/Body";
 
 export default function App() {
   return (
     <div>
-      <Header />
-      <h1 className="text-3xl font-bold underline">Hello world!</h1>;
+      <Body />
     </div>
   );
 }
