@@ -13,3 +13,15 @@ export const API_options = {
   },
 };
 export const IMG_CDN_URL = "https://image.tmdb.org/t/p/w500";
+
+export const BG_URL =
+  "https://assets.nflxext.com/ffe/siteui/vlv3/fc164b4b-f085-44ee-bb7f-ec7df8539eff/d23a1608-7d90-4da1-93d6-bae2fe60a69b/IN-en-20230814-popsignuptwoweeks-perspective_alpha_website_large.jpg";
+
+export const SUPPORTED_LANGUAGES = [
+  { identifier: "en", name: "English" },
+  { identifier: "hindi", name: "Hindi" },
+  { identifier: "spanish", name: "Spanish" },
+];
+
+export const OPENAI_KEY =
+  "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";
