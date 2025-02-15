@@ -1,7 +1,8 @@
 import React, { useRef } from "react";
 import lang from "../utils/languageConstants";
 import { useSelector } from "react-redux";
-import openai from "../utils/openai";
+import { groq } from "../utils/openai";
+
 const GptSearchBar = () => {
   const langKey = useSelector((store) => store.config.lang);
   const searchText = useRef(null);
@@ -15,12 +16,16 @@ const GptSearchBar = () => {
       searchText.current.value +
       ". only give me names of 5 movies, comma seperated like the example result given ahead. Example Result: Gadar, Sholay, Don, Golmaal, Koi Mil Gaya";
 
-    const gptResults = await openai.chat.completions.create({
-      model: "gpt-4o-mini",
-      store: true,
-      messages: [{ role: "user", content: gptQuery }],
+    const gptResults = await groq.chat.completions.create({
+      messages: [
+        {
+          role: "user",
+          content: gptQuery,
+        },
+      ],
+      model: "llama-3.3-70b-versatile",
     });
-    console.log(gptResults.choices);
+    console.log(gptResults.choices[0].message.content);
   };
   return (
     <div className=" pt-[20%] flex justify-center">
